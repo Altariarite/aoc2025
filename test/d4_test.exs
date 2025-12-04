@@ -35,7 +35,7 @@ defmodule D4Test do
   test "remove" do
     {c, m} = D4.parse(@example) |> D4.remove()
     assert c == 13
-    assert Map.get(m, {0, 2})
+    assert Map.get(m, {0, 2}) == ?x
   end
 
   test "keep removing" do
