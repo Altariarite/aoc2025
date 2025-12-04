@@ -16,10 +16,10 @@ defmodule D4Test do
   @input Path.join(__DIR__, "../input/d4") |> File.read!()
 
   test "parse into map" do
-    auto_assert [{{0, 0}, "@"}, {{0, 1}, "@"}, {{0, 2}, "@"}, {{0, 3}, "."}] <-
+    auto_assert [{{0, 0}, ?@}, {{0, 1}, ?@}, {{0, 2}, ?@}, {{0, 3}, ?.}] <-
                   D4.parse_row("@@@.@.@.@@", 0) |> Enum.take(4)
 
-    auto_assert "." <- D4.parse(@example) |> Map.get({0, 0})
+    auto_assert ?. <- D4.parse(@example) |> Map.get({0, 0})
   end
 
   test "count" do
